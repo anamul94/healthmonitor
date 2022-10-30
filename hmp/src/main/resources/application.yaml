@@ -1,0 +1,34 @@
+
+spring:
+  profiles: anamul
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/arcgendb?currentSchema=ARCGEN
+    username: postgres
+    password: 1234
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      #    show-sql: true
+      properties:
+        hibernate:
+          ddl-auto: update
+          #        generate_statistics: true
+          format_sql: true
+          jdbc:
+            lob:
+              non_contextual_creation: true
+      logging:
+        level:
+        org:
+          hibernate:
+            type: trace
+            stat: debug
+
+
+server:
+  address: 127.0.0.1
+  port: 8080
+---
+
+spring:
+  profiles:
+    active: anamul
